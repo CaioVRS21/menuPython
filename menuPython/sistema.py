@@ -1,10 +1,15 @@
 from lib.interface import *
+from lib.arquivo import *
 from time import sleep
 
+arq = 'listapessoas.txt'
+if not arquivoExiste(arq):
+    criaArquivo(arq)
 while True:
     resposta = menu(['Ver Pessoas Cadastradas', 'Cadastrar nova Pessoa', 'Sair do Sistema'])
     if resposta == 1:
-        cabecalho('Opção 1')
+        # Opção de listagem das pessoas cadastradas
+        lerArquivo(arq)
     elif resposta == 2:
         cabecalho('Opção 2')
     elif resposta == 3:
