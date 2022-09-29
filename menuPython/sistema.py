@@ -11,7 +11,11 @@ while True:
         # Opção de listagem das pessoas cadastradas
         lerArquivo(arq)
     elif resposta == 2:
-        cabecalho('Opção 2')
+        # Opção de cadastrar uma nova pessoa
+        cabecalho('NOVO CADASTRO')
+        nome = str(input('nome: '))
+        idade = LeiaInt('Idade: ')
+        cadastrar(arq, nome, idade)
     elif resposta == 3:
         cabecalho('Saindo do sistema... Até logo!')
         break
